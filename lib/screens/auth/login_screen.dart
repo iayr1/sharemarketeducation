@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:edtech_app/providers/auth_provider.dart' as AppAuthProvider;
-import 'package:edtech_app/utils/navigation.dart'; 
+import 'package:edtech_app/utils/navigation.dart';
+import 'package:google_sign_in/google_sign_in.dart'; 
 import 'package:provider/provider.dart';
 import '../dashboard/dashboard_courses_screen.dart';
 
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
@@ -99,7 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => EnrolledCoursesScreen()),
+                        MaterialPageRoute(builder: (context) => const EnrolledCoursesScreen()),
                       );
                     }
                   } catch (e) {
@@ -135,7 +138,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   await signInWithGoogle();
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => EnrolledCoursesScreen()),
+                    MaterialPageRoute(builder: (context) => const EnrolledCoursesScreen()),
                   );
                 } catch (e) {
                   showDialog(

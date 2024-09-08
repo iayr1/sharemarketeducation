@@ -1,10 +1,11 @@
 import 'package:edtech_app/models/course.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../widgets/dashboard_screen_course_card.dart';
 import 'course_player_screen.dart';
 
 class EnrolledCoursesScreen extends StatelessWidget {
+  const EnrolledCoursesScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     Course dartCourse = Course(

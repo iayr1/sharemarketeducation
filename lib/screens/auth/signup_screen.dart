@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 import 'package:edtech_app/providers/auth_provider.dart' as AppAuthProvider;
 import 'package:edtech_app/utils/navigation.dart';
 import '../dashboard/dashboard_courses_screen.dart';
 
 class SignupScreen extends StatefulWidget {
+  const SignupScreen({super.key});
+
   @override
   _SignupScreenState createState() => _SignupScreenState();
 }
@@ -98,7 +101,7 @@ class _SignupScreenState extends State<SignupScreen> {
 
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => EnrolledCoursesScreen()),
+                        MaterialPageRoute(builder: (context) => const EnrolledCoursesScreen()),
                       );
                     }
                   } catch (e) {
@@ -123,32 +126,32 @@ class _SignupScreenState extends State<SignupScreen> {
                 }
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFFFFD700), // Golden color
+                backgroundColor: const Color(0xFFFFD700), // Golden color
               ),
-              child: Text('Sign Up', style: TextStyle(color: Colors.black)),
+              child: const Text('Sign Up', style: TextStyle(color: Colors.black)),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             ElevatedButton.icon(
               onPressed: () async {
                 try {
                   await signInWithGoogle();
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => EnrolledCoursesScreen()),
+                    MaterialPageRoute(builder: (context) => const EnrolledCoursesScreen()),
                   );
                 } catch (e) {
                   showDialog(
                     context: context,
                     builder: (BuildContext context) {
                       return AlertDialog(
-                        title: Text('Error', style: TextStyle(color: Colors.red)),
-                        content: Text('Google sign-in failed'),
+                        title: const Text('Error', style: TextStyle(color: Colors.red)),
+                        content: const Text('Google sign-in failed'),
                         actions: [
                           TextButton(
                             onPressed: () {
                               Navigator.of(context).pop();
                             },
-                            child: Text('OK'),
+                            child: const Text('OK'),
                           ),
                         ],
                       );
@@ -163,14 +166,14 @@ class _SignupScreenState extends State<SignupScreen> {
                 'assets/images/google_icon.png', // Add this image in your assets
                 height: 24.0,
               ),
-              label: Text('Sign up with Google', style: TextStyle(color: Colors.black)),
+              label: const Text('Sign up with Google', style: TextStyle(color: Colors.black)),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             TextButton(
               onPressed: () {
                 Navigator.pushReplacementNamed(context, Navigation.loginRoute);
               },
-              child: Text(
+              child: const Text(
                 'Already have an account? Login here',
                 style: TextStyle(color: Color(0xFFFFD700)),
               ),

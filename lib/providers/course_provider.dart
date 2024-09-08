@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:edtech_app/models/course.dart';
 
 class CourseProvider extends ChangeNotifier {
-  List<Course> _enrolledCourses = [];
+  final List<Course> _enrolledCourses = [];
 
   List<Course> get enrolledCourses => _enrolledCourses;
 

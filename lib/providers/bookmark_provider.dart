@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:edtech_app/models/bookmark.dart';
 
 class BookmarkProvider extends ChangeNotifier {
-  Map<String, List<Bookmark>> _bookmarks = {};
+  final Map<String, List<Bookmark>> _bookmarks = {};
 
   Map<String, List<Bookmark>> get bookmarks => _bookmarks;
 

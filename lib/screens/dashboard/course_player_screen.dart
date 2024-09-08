@@ -6,7 +6,7 @@ import 'package:edtech_app/screens/widgets/bookmark_list.dart';
 class CoursePlayerScreen extends StatefulWidget {
   final Course course;
 
-  CoursePlayerScreen({required this.course});
+  const CoursePlayerScreen({super.key, required this.course});
 
   @override
   _CoursePlayerScreenState createState() => _CoursePlayerScreenState();
@@ -43,7 +43,7 @@ class _CoursePlayerScreenState extends State<CoursePlayerScreen> {
                 // Placeholder for Video Playback UI
                 Container(
                   color: Colors.black,
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'Video Playback UI',
                       style: TextStyle(color: Colors.white),
@@ -63,20 +63,20 @@ class _CoursePlayerScreenState extends State<CoursePlayerScreen> {
                 ElevatedButton(
                   onPressed: () {
                     _pageController.previousPage(
-                      duration: Duration(milliseconds: 500),
+                      duration: const Duration(milliseconds: 500),
                       curve: Curves.easeInOut,
                     );
                   },
-                  child: Text('Previous'),
+                  child: const Text('Previous'),
                 ),
                 ElevatedButton(
                   onPressed: () {
                     _pageController.nextPage(
-                      duration: Duration(milliseconds: 500),
+                      duration: const Duration(milliseconds: 500),
                       curve: Curves.easeInOut,
                     );
                   },
-                  child: Text('Next'),
+                  child: const Text('Next'),
                 ),
               ],
             ),
@@ -87,9 +87,9 @@ class _CoursePlayerScreenState extends State<CoursePlayerScreen> {
               onPressed: () {
                 // Handle bookmark logic
               },
-              child: Text('Bookmark'),
+              child: const Text('Bookmark'),
             ),
-            BookmarkListWidget(bookmarks: []),
+            const BookmarkListWidget(bookmarks: []),
           ],
           if (_currentPage == 1) ...[
             ElevatedButton(
@@ -99,8 +99,8 @@ class _CoursePlayerScreenState extends State<CoursePlayerScreen> {
                   context: context,
                   builder: (BuildContext context) {
                     return AlertDialog(
-                      title: Text('Congratulations!'),
-                      content: Text('You have completed the course. Claim your certificate.'),
+                      title: const Text('Congratulations!'),
+                      content: const Text('You have completed the course. Claim your certificate.'),
                       actions: [
                         TextButton(
                           onPressed: () {
@@ -108,14 +108,14 @@ class _CoursePlayerScreenState extends State<CoursePlayerScreen> {
                             // Navigate to the dashboard
                             Navigator.pushNamed(context, '/dashboard');
                           },
-                          child: Text('Claim Certificate'),
+                          child: const Text('Claim Certificate'),
                         ),
                       ],
                     );
                   },
                 );
               },
-              child: Text('Check Completion'),
+              child: const Text('Check Completion'),
             ),
           ],
         ],

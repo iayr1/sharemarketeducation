@@ -4,15 +4,15 @@ import 'package:edtech_app/models/bookmark.dart';
 class BookmarkListWidget extends StatelessWidget {
   final List<Bookmark> bookmarks;
 
-  BookmarkListWidget({required this.bookmarks});
+  const BookmarkListWidget({super.key, required this.bookmarks});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
+        const Padding(
+          padding: EdgeInsets.all(8.0),
           child: Text(
             'Bookmarks',
             style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
@@ -20,7 +20,7 @@ class BookmarkListWidget extends StatelessWidget {
         ),
         ListView.builder(
           shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           itemCount: bookmarks.length,
           itemBuilder: (context, index) {
             var bookmark = bookmarks[index];

@@ -4,22 +4,22 @@ import 'package:edtech_app/models/module.dart';
 class ModuleListWidget extends StatelessWidget {
   final List<Module> modules;
 
-  ModuleListWidget({required this.modules});
+  const ModuleListWidget({super.key, required this.modules});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
+        const Padding(
+          padding: EdgeInsets.all(8.0),
           child: Text(
             'Modules',
             style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
           ),
         ),
         Container(
-          padding: EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           decoration: BoxDecoration(
             color: Colors.grey[200], // Adjust color based on your theme
             borderRadius: BorderRadius.circular(8.0),
@@ -35,7 +35,7 @@ class ModuleListWidget extends StatelessWidget {
         ),
         ListView.builder(
           shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           itemCount: modules.length,
           itemBuilder: (context, index) {
             var module = modules[index];
@@ -53,7 +53,7 @@ class ModuleListWidget extends StatelessWidget {
     return ListTile(
       title: Text(
         title,
-        style: TextStyle(fontWeight: FontWeight.bold),
+        style: const TextStyle(fontWeight: FontWeight.bold),
       ),
       subtitle: Text(description),
     );

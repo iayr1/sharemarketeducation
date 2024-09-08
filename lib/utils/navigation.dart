@@ -3,7 +3,6 @@ import 'package:edtech_app/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:edtech_app/screens/auth/login_screen.dart';
 import 'package:edtech_app/screens/auth/signup_screen.dart';
-import 'package:edtech_app/screens/widgets/dashboard_screen_course_card.dart';
 import '../screens/dashboard/course_player_screen.dart';
 import '../screens/dashboard/dashboard_courses_screen.dart';
 
@@ -17,13 +16,13 @@ class Navigation {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case splashRoute:
-        return MaterialPageRoute(builder: (_) => SplashScreen());
+        return MaterialPageRoute(builder: (_) => const SplashScreen());
       case loginRoute:
-        return MaterialPageRoute(builder: (_) => LoginScreen());
+        return MaterialPageRoute(builder: (_) => const LoginScreen());
       case signupRoute:
-        return MaterialPageRoute(builder: (_) => SignupScreen());
+        return MaterialPageRoute(builder: (_) => const SignupScreen());
       case dashboardRoute:
-        return MaterialPageRoute(builder: (_) => EnrolledCoursesScreen());
+        return MaterialPageRoute(builder: (_) => const EnrolledCoursesScreen());
       case coursePlayerRoute:
         // You may need to extract course data from settings.arguments
         // and pass it to CoursePlayerScreen constructor
