@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: Navigation.loginRoute,
+      initialRoute: Navigation.splashRoute,
       onGenerateRoute: Navigation.generateRoute,
     );
   }
