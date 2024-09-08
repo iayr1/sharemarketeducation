@@ -1,3 +1,4 @@
+import 'package:edtech_app/firebase_options.dart';
 import 'package:edtech_app/providers/auth_provider.dart';
 import 'package:edtech_app/utils/navigation.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +7,9 @@ import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(
     MultiProvider(
       providers: [
