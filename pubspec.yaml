@@ -28,17 +28,22 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  bloc: ^8.1.4
+  carousel_slider: ^5.0.0
   chewie: ^1.7.1
   cloud_firestore: 5.4.0
   cupertino_icons: ^1.0.2
+  equatable: ^2.0.5
   firebase_auth: ^5.2.0
+  firebase_core: any
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.1.6
   google_sign_in: ^6.1.6
+  lottie: ^3.1.2
   provider: ^6.1.1
-
-  firebase_core: any
   video_player: any
+  meta: any
 dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_test:
@@ -54,8 +59,8 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
