@@ -38,10 +38,13 @@ class LoginCubit extends Cubit<LoginState> {
       );
       await _auth.signInWithCredential(credential);
       emit(LoginSuccess());
+    } on FirebaseAuthException catch (e) {
+      emit(LoginFailure('Google sign-in failed: ${e.message}'));
     } catch (e) {
-      emit(LoginFailure('Google sign-in failed'));
+      emit(LoginFailure('An unexpected error occurred: $e'));
     }
   }
+
 
   Future<void> forgotPassword(String email) async {
     emit(LoginLoading());

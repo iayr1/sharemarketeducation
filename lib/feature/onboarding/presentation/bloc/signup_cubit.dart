@@ -38,8 +38,10 @@ class SignUpCubit extends Cubit<SignUpState> {
       );
       await _auth.signInWithCredential(credential);
       emit(SignUpSuccess());
+    } on FirebaseAuthException catch (e) {
+      emit(SignUpFailure('Google sign-in failed: ${e.message}'));
     } catch (e) {
-      emit(SignUpFailure('Google sign-in failed'));
+      emit(SignUpFailure('An unexpected error occurred: $e'));
     }
   }
 }
