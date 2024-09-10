@@ -34,13 +34,13 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
         ),
         child: Align(
-          alignment: Alignment.center, // Center the child
+          alignment: Alignment.center,
           child: Padding(
             padding: const EdgeInsets.only(
-              top: 100.0, // Adjust top padding
-              bottom: 100.0, // Adjust bottom padding
-              left: 10.0, // Adjust left padding
-              right: 50.0, // Adjust right padding
+              top: 100.0,
+              bottom: 100.0,
+              left: 10.0,
+              right: 50.0,
             ),
             child: SizedBox(
               height: 400,

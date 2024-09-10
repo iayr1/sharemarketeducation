@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class RecordedScreen extends StatelessWidget {
-  const RecordedScreen({super.key});
+class LiveTradingScreen extends StatelessWidget {
+  const LiveTradingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class RecordedScreen extends StatelessWidget {
           },
         ),
         title: const Text(
-          'Recorded Sessions',
+          'Live Sessions',
           style: TextStyle(
             color: Color(0xFFab8e63),
             fontWeight: FontWeight.bold,
@@ -25,8 +25,7 @@ class RecordedScreen extends StatelessWidget {
               Shadow(blurRadius: 5, color: Colors.black, offset: Offset(2, 2))
             ],
           ),
-        ),
-      ),
+        ),),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -38,36 +37,36 @@ class RecordedScreen extends StatelessWidget {
         child: ListView(
           padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
           children: [
-            buildRecordedSessionCard(
-              title: "Introduction to Trading",
-              description: "A comprehensive introduction to trading basics.",
-              imageUrl: 'assets/recorded1.jpg',
-              duration: "1h 15m",
+            buildLiveSessionCard(
+              title: "Live Trading Session: Basics",
+              description: "Join us for a live session where we cover the basics of trading.",
+              imageUrl: 'assets/live_session1.jpg',
+              date: "Sept 15, 2024 - 6:00 PM",
             ),
-            buildRecordedSessionCard(
-              title: "Technical Analysis",
-              description: "Learn about technical analysis tools and strategies.",
-              imageUrl: 'assets/recorded2.jpg',
-              duration: "2h 30m",
+            buildLiveSessionCard(
+              title: "Advanced Trading Strategies",
+              description: "Dive deep into advanced trading strategies with our expert.",
+              imageUrl: 'assets/live_session2.jpg',
+              date: "Sept 20, 2024 - 8:00 PM",
             ),
-            buildRecordedSessionCard(
-              title: "Market Trends and Forecasting",
-              description: "Understand market trends and forecasting techniques.",
-              imageUrl: 'assets/recorded3.jpg',
-              duration: "1h 45m",
+            buildLiveSessionCard(
+              title: "Market Analysis and Trends",
+              description: "Learn how to analyze market trends in real-time.",
+              imageUrl: 'assets/live_session3.jpg',
+              date: "Sept 25, 2024 - 7:00 PM",
             ),
-            // Add more recorded sessions here
+            // Add more live sessions here
           ],
         ),
       ),
     );
   }
 
-  Widget buildRecordedSessionCard({
+  Widget buildLiveSessionCard({
     required String title,
     required String description,
     required String imageUrl,
-    required String duration,
+    required String date,
   }) {
     return Card(
       margin: const EdgeInsets.only(bottom: 16.0),
@@ -112,7 +111,7 @@ class RecordedScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10),
             child: Text(
-              duration,
+              date,
               style: TextStyle(
                 color: Colors.grey[500],
                 fontSize: 14,
@@ -123,7 +122,7 @@ class RecordedScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: ElevatedButton(
               onPressed: () {
-                // Navigate to the recorded session details or play the recording
+                // Navigate to live session details or join the session
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFFab8e63),
@@ -133,7 +132,7 @@ class RecordedScreen extends StatelessWidget {
                 ),
               ),
               child: const Text(
-                'Watch Now',
+                'Join Now',
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class EbooksScreen extends StatelessWidget {
-  const EbooksScreen({super.key});
+class MarketScreen extends StatelessWidget {
+  const MarketScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class EbooksScreen extends StatelessWidget {
           },
         ),
         title: const Text(
-          'E-books',
+          'Recorded Sessions',
           style: TextStyle(
             color: Color(0xFFab8e63),
             fontWeight: FontWeight.bold,
@@ -38,36 +38,36 @@ class EbooksScreen extends StatelessWidget {
         child: ListView(
           padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
           children: [
-            buildEbookCard(
-              title: "Fundamentals of Trading",
-              author: "John Doe",
-              imageUrl: 'assets/ebook1.jpg',
-              description: "An introductory guide to the fundamentals of trading.",
+            buildRecordedSessionCard(
+              title: "Introduction to Trading",
+              description: "A comprehensive introduction to trading basics.",
+              imageUrl: 'assets/recorded1.jpg',
+              duration: "1h 15m",
             ),
-            buildEbookCard(
-              title: "Advanced Trading Strategies",
-              author: "Jane Smith",
-              imageUrl: 'assets/ebook2.jpg',
-              description: "In-depth strategies for advanced traders.",
+            buildRecordedSessionCard(
+              title: "Technical Analysis",
+              description: "Learn about technical analysis tools and strategies.",
+              imageUrl: 'assets/recorded2.jpg',
+              duration: "2h 30m",
             ),
-            buildEbookCard(
-              title: "Technical Analysis Explained",
-              author: "Robert Brown",
-              imageUrl: 'assets/ebook3.jpg',
-              description: "A comprehensive guide to technical analysis in trading.",
+            buildRecordedSessionCard(
+              title: "Market Trends and Forecasting",
+              description: "Understand market trends and forecasting techniques.",
+              imageUrl: 'assets/recorded3.jpg',
+              duration: "1h 45m",
             ),
-            // Add more e-books here
+            // Add more recorded sessions here
           ],
         ),
       ),
     );
   }
 
-  Widget buildEbookCard({
+  Widget buildRecordedSessionCard({
     required String title,
-    required String author,
-    required String imageUrl,
     required String description,
+    required String imageUrl,
+    required String duration,
   }) {
     return Card(
       margin: const EdgeInsets.only(bottom: 16.0),
@@ -102,17 +102,6 @@ class EbooksScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Text(
-              "by $author",
-              style: TextStyle(
-                color: Colors.grey[400],
-                fontSize: 16,
-                fontStyle: FontStyle.italic,
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Text(
               description,
               style: TextStyle(
                 color: Colors.grey[300],
@@ -122,9 +111,19 @@ class EbooksScreen extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10),
+            child: Text(
+              duration,
+              style: TextStyle(
+                color: Colors.grey[500],
+                fontSize: 14,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: ElevatedButton(
               onPressed: () {
-                // Navigate to the e-book details or open the e-book
+                // Navigate to the recorded session details or play the recording
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFFab8e63),
@@ -134,7 +133,7 @@ class EbooksScreen extends StatelessWidget {
                 ),
               ),
               child: const Text(
-                'Read Now',
+                'Watch Now',
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,

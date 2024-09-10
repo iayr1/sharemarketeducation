@@ -1,4 +1,4 @@
-import 'package:edtech_app/feature/home/presentation/screens/home_screen.dart';
+import 'package:edtech_app/feature/education/presentation/screens/education_screen.dart';
 import 'package:edtech_app/feature/onboarding/presentation/screens/login_screen.dart';
 import 'package:edtech_app/feature/onboarding/presentation/screens/signup_screen.dart';
 import 'package:edtech_app/feature/splash/presentation/splash_screen.dart';
@@ -20,7 +20,7 @@ class Navigation {
       case signupRoute:
         return MaterialPageRoute(builder: (_) => const SignUpScreen());
       case dashboardRoute:
-        return MaterialPageRoute(builder: (_) => const HomeScreen());
+        return MaterialPageRoute(builder: (_) => const EducationScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

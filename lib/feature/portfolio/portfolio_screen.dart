@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class LiveScreen extends StatelessWidget {
-  const LiveScreen({super.key});
+class PortfolioScreen extends StatelessWidget {
+  const PortfolioScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class LiveScreen extends StatelessWidget {
           },
         ),
         title: const Text(
-          'Live Sessions',
+          'E-books',
           style: TextStyle(
             color: Color(0xFFab8e63),
             fontWeight: FontWeight.bold,
@@ -25,7 +25,8 @@ class LiveScreen extends StatelessWidget {
               Shadow(blurRadius: 5, color: Colors.black, offset: Offset(2, 2))
             ],
           ),
-        ),),
+        ),
+      ),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -37,36 +38,36 @@ class LiveScreen extends StatelessWidget {
         child: ListView(
           padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
           children: [
-            buildLiveSessionCard(
-              title: "Live Trading Session: Basics",
-              description: "Join us for a live session where we cover the basics of trading.",
-              imageUrl: 'assets/live_session1.jpg',
-              date: "Sept 15, 2024 - 6:00 PM",
+            buildEbookCard(
+              title: "Fundamentals of Trading",
+              author: "John Doe",
+              imageUrl: 'assets/ebook1.jpg',
+              description: "An introductory guide to the fundamentals of trading.",
             ),
-            buildLiveSessionCard(
+            buildEbookCard(
               title: "Advanced Trading Strategies",
-              description: "Dive deep into advanced trading strategies with our expert.",
-              imageUrl: 'assets/live_session2.jpg',
-              date: "Sept 20, 2024 - 8:00 PM",
+              author: "Jane Smith",
+              imageUrl: 'assets/ebook2.jpg',
+              description: "In-depth strategies for advanced traders.",
             ),
-            buildLiveSessionCard(
-              title: "Market Analysis and Trends",
-              description: "Learn how to analyze market trends in real-time.",
-              imageUrl: 'assets/live_session3.jpg',
-              date: "Sept 25, 2024 - 7:00 PM",
+            buildEbookCard(
+              title: "Technical Analysis Explained",
+              author: "Robert Brown",
+              imageUrl: 'assets/ebook3.jpg',
+              description: "A comprehensive guide to technical analysis in trading.",
             ),
-            // Add more live sessions here
+            // Add more e-books here
           ],
         ),
       ),
     );
   }
 
-  Widget buildLiveSessionCard({
+  Widget buildEbookCard({
     required String title,
-    required String description,
+    required String author,
     required String imageUrl,
-    required String date,
+    required String description,
   }) {
     return Card(
       margin: const EdgeInsets.only(bottom: 16.0),
@@ -101,6 +102,17 @@ class LiveScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Text(
+              "by $author",
+              style: TextStyle(
+                color: Colors.grey[400],
+                fontSize: 16,
+                fontStyle: FontStyle.italic,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
               description,
               style: TextStyle(
                 color: Colors.grey[300],
@@ -110,19 +122,9 @@ class LiveScreen extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10),
-            child: Text(
-              date,
-              style: TextStyle(
-                color: Colors.grey[500],
-                fontSize: 14,
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: ElevatedButton(
               onPressed: () {
-                // Navigate to live session details or join the session
+                // Navigate to the e-book details or open the e-book
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFFab8e63),
@@ -132,7 +134,7 @@ class LiveScreen extends StatelessWidget {
                 ),
               ),
               child: const Text(
-                'Join Now',
+                'Read Now',
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,

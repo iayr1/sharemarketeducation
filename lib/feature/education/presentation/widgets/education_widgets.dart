@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget buildHomeTabButton(int index, String label, int selectedIndex, Function(int) onTap) {
+Widget buildEducationTabButton(int index, String label, int selectedIndex, Function(int) onTap) {
   bool isSelected = index == selectedIndex;
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -26,7 +26,7 @@ Widget buildHomeTabButton(int index, String label, int selectedIndex, Function(i
   );
 }
 
-Widget buildHomeListView(String title) {
+Widget buildEducationListView(String title) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -57,7 +57,7 @@ Widget buildHomeListView(String title) {
               ),
               child: Center(
                 child: Text(
-                  'Home Item $index',
+                  'Education Item $index',
                   style: const TextStyle(color: Colors.white),
                 ),
               ),

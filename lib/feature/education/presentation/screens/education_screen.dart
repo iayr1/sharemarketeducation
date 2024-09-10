@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class EducationScreen extends StatefulWidget {
+  const EducationScreen({super.key});
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _EducationScreenState createState() => _EducationScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _EducationScreenState extends State<EducationScreen> {
   int selectedButtonIndex = 0;
 
   @override
@@ -69,7 +69,6 @@ class _HomeScreenState extends State<HomeScreen> {
         IconButton(
           icon: const Icon(Icons.notifications, color: Color(0xFFab8e63), size: 30),
           onPressed: () {
-            // Notification action
           },
         ),
       ],

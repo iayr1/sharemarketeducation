@@ -1,11 +1,11 @@
 import 'package:edtech_app/config/gradient/app_gradient.dart';
 import 'package:edtech_app/core/routes/routes.dart';
+import 'package:edtech_app/feature/education/presentation/screens/education_screen.dart';
 import 'package:edtech_app/feature/onboarding/presentation/bloc/signup_cubit.dart';
 import 'package:edtech_app/feature/onboarding/presentation/bloc/signup_state.dart';
 import 'package:edtech_app/feature/onboarding/presentation/widgets/auth_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:edtech_app/config/color/app_color.dart';
-import 'package:edtech_app/feature/home/presentation/screens/home_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -41,7 +41,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 if (state is SignUpSuccess) {
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => const HomeScreen()),
+                    MaterialPageRoute(builder: (context) => const EducationScreen()),
                   );
                 } else if (state is SignUpFailure) {
                   showDialog(
